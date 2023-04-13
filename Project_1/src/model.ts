@@ -1,18 +1,34 @@
-let displayName = "Matt's Desk";
-let inventoryType = "funiture";
-let trackingNumber = "FD123455";
-let createDate = new Date();
-let originalCost = 425;
+let displayName: string = "Matt's Desk";
+let inventoryType: string = "funiture";
+let trackingNumber: string = "FD123455";
+let createDate: Date = new Date();
+let originalCost: string | number = 425;
 
-function getInventoryItem(trackingNumber) {
+interface InventoryItem {
+    displayName: string;
+    inventoryType: "computer" | "furniture";
+    trackingNumber: string;
+    createDate: Date;
+    originalCost?: number;
+
+    addNote?: (note: string) => string
+}
+
+function getInventoryItem(trackingNumber: string) : InventoryItem {
+    return null;
+}
+
+function saveInventoryItem(item: InventoryItem) {
 
 }
 
-function saveInventoryItem(item) {
-    
-}
 let inventoryItem = getInventoryItem(trackingNumber);
 
 inventoryItem.createDate = new Date();
 
-saveInventoryItem(inventoryItem);
+saveInventoryItem({
+    displayName: "test Item",
+    inventoryType: 'computer',
+    trackingNumber: '334566YU',
+    createDate: new Date
+});
