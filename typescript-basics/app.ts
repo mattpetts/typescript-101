@@ -8,11 +8,21 @@
 // }
 
 // Type infered object
-const person = {
+const person: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [ number, string ]
+} = {
     name: 'Matt',
     age: 30,
-    hobbies: ['Sports', 'Cooking']
+    hobbies: ['Sports', 'Cooking'],
+    role: [ 2, 'author' ]
 }
+
+//person.role.push(123); // Typescript cannot catch this and length of the tuple isn't enforced
+//person.role = [1, 'admin', 123]; // Length is enforced here
+//person.role[1] = 10; // Not assignable to the role tuple
 
 let favouriteActivities: string[];
 favouriteActivities = ['Sports']
