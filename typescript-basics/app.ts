@@ -1,3 +1,7 @@
+const ADMIN = 0;
+const READ_ONLY = 1;
+const AUTHOR = 2;
+
 // Explicitly declared object
 // const person: {
 //     name: string;
@@ -7,17 +11,24 @@
 //     age: 30
 // }
 
+// const person: {
+//     name: string;
+//     age: number;
+//     hobbies: string[];
+//     role: [ number, string ] // this is a tuple
+// } = {
+//     name: 'Matt',
+//     age: 30,
+//     hobbies: ['Sports', 'Cooking'],
+//     role: [ 2, 'author' ]
+// }
+
 // Type infered object
-const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: [ number, string ]
-} = {
+const person = {
     name: 'Matt',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
-    role: [ 2, 'author' ]
+    role: ADMIN
 }
 
 //person.role.push(123); // Typescript cannot catch this and length of the tuple isn't enforced
