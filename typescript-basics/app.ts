@@ -1,6 +1,6 @@
-const ADMIN = 0;
-const READ_ONLY = 1;
-const AUTHOR = 2;
+// const ADMIN = 0;
+// const READ_ONLY = 1;
+// const AUTHOR = 2;
 
 // Explicitly declared object
 // const person: {
@@ -23,12 +23,14 @@ const AUTHOR = 2;
 //     role: [ 2, 'author' ]
 // }
 
+enum Role { ADMIN = 5, READ_ONLY, AUTHOR };
+
 // Type infered object
 const person = {
     name: 'Matt',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
-    role: ADMIN
+    role: Role.ADMIN
 }
 
 //person.role.push(123); // Typescript cannot catch this and length of the tuple isn't enforced
