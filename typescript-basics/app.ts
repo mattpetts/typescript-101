@@ -1,4 +1,8 @@
-function combine( input1: number | string, input2: number | string ) {
+function combine( 
+    input1: number | string, 
+    input2: number | string,
+    resultConversion: 'as-number' | 'as-string'
+) {
     
     let result;
 
@@ -8,10 +12,17 @@ function combine( input1: number | string, input2: number | string ) {
         result = input1.toString() + input2.toString();
     }
     return result;
+
+    // Using our literal string we can now check how to output the result
+    // if ( resultConversion === 'as-number' ) {
+    //     return +resultConversion;
+    // } else {
+    //     return result.toString()
+    // }
 }
 
-const combineAges = combine( 30, 32 );
+const combineAges = combine( 30, 32, 'as-number' );
 console.log(combineAges) // this works
 
-const combineNames = combine( 'Matt', 'Dan' );
+const combineNames = combine( 'Matt', 'Dan', 'as-string' );
 console.log(combineNames) // this fails to compile before union types are added
